@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">On Your Track</string>
+    <string name="on_your_track">On Your Track</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="contrase_a">Contraseña</string>
+</resources>
