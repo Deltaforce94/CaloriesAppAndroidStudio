@@ -4,92 +4,117 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/TextView1_login"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TopMenu_Main"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/on_your_track"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        android:visibility="visible"
+        android:layout_height="100dp"
+        android:layout_marginBottom="652dp"
+        android:background="@color/teal_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <Button
-        android:id="@+id/button1_login"
-        android:layout_width="0dp"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/PreviousButton_Main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/DayText_Main"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_media_rew"
+            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/DayText_Main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hoy"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/NextButton_Main"
+            app:layout_constraintStart_toEndOf="@+id/PreviousButton_Main"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.509" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/NextButton_Main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/DayText_Main"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_media_ff"
+            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/CaloriesCount_Main"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/black"
-        android:backgroundTint="#8BC34A"
-        android:backgroundTintMode="add"
-        android:text="@string/login"
-        android:textSize="20sp"
+        android:layout_marginTop="24dp"
+        android:text="2000/2000"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordText1_login"
-        tools:ignore="VisualLintButtonSize" />
+        app:layout_constraintTop_toBottomOf="@+id/TopMenu_Main" />
 
-    <EditText
-        android:id="@+id/EmailText1_login"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
+    <ProgressBar
+        android:id="@+id/CaloriesBar_Main"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/PasswordText1_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextView1_login"
-        tools:ignore="VisualLintTextFieldSize" />
-
-    <EditText
-        android:id="@+id/PasswordText1_login"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="@string/contrase_a"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EmailText1_login"
-        tools:ignore="TouchTargetSizeCheck,VisualLintTextFieldSize"
-        android:autofillHints="" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="105dp"
-        android:layout_marginEnd="106dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:contentDescription="logo"
-        android:src="@drawable/icon"
-        app:layout_constraintBottom_toTopOf="@+id/TextView1_login"
+        android:progressDrawable="@drawable/button_rounded"
+        app:layout_constraintBottom_toTopOf="@+id/FoodContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CaloriesCount_Main" />
+
+    <LinearLayout
+        android:id="@+id/FoodContent"
+        android:layout_width="410dp"
+        android:layout_height="502dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@+id/CaloriesBar_Main">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="Patatas fritas - 60g"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="Puré - 200g"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
